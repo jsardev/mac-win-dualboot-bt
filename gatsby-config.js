@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Mac & Windows Dualboot Bluetooth Pairing',
   },
   plugins: ['gatsby-plugin-react-helmet'],
-}
+};
