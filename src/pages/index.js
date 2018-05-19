@@ -100,7 +100,11 @@ class Index extends Component {
               </ListItem>
               <ListItem>
                 Get the device <code>LinkKey</code> from Mac. To get it, use
-                this command: <code>Command Here</code>.{' '}
+                this command:{' '}
+                <code>
+                  sudo defaults read
+                  /private/var/root/Library/Preferences/com.apple.Bluetoothd.plist
+                </code>.{' '}
                 <Highlighted>
                   Be sure to take the right one (the one with id{' '}
                   <code> {this.state.deviceIdentifier}</code>).
@@ -110,7 +114,7 @@ class Index extends Component {
                 Enter your <code>LinkKey</code> here:
               </ListItem>
             </List>
-            Your device bluetooth LinkKey on Mac:
+            Your device bluetooth <code>LinkKey</code> on Mac:
             <Input onChange={this.onLinkKeyChange} />
             <Heading sub>Boot into Windows again</Heading>
             <List>
