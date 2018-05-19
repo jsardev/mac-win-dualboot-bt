@@ -46,8 +46,8 @@ const IndexPage = () => (
           </ListItem>
           <ListItem>
             Right click on the device you want to work for both systems and
-            select the <code>Properties</code> option. Look for your device
-            unique identifier.
+            select the <code>Properties</code> option.{' '}
+            <Highlighted>Look for your device unique identifier.</Highlighted>
           </ListItem>
           <ListItem>Enter your device identifier below:</ListItem>
         </List>
@@ -62,8 +62,11 @@ const IndexPage = () => (
           </ListItem>
           <ListItem>
             Get the device <code>LinkKey</code> from Mac. To get it, use this
-            command: <code>Command Here</code>. Be sure to take the right one
-            (the one with id <code>UNIQUE IDENTIFIER HERE</code>).
+            command: <code>Command Here</code>.{' '}
+            <Highlighted>
+              Be sure to take the right one (the one with id{' '}
+              <code>UNIQUE IDENTIFIER HERE</code>).
+            </Highlighted>
           </ListItem>
           <ListItem>
             Enter your <code>LinkKey</code> here:
@@ -88,8 +91,10 @@ const IndexPage = () => (
             select <code>Modify binary data</code>.
           </ListItem>
           <ListItem>
-            Erase all the data and enter your converted key (symbol by symbol,
-            unfortunately you can't copy-paste it):{' '}
+            Erase all the data and enter your converted key{' '}
+            <Highlighted>
+              (symbol by symbol, unfortunately you can't copy-paste it):
+            </Highlighted>{' '}
             <code>CONVERTED KEY HERE</code>.
           </ListItem>
         </List>
