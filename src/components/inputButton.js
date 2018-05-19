@@ -1,27 +1,20 @@
+import React from "react";
 import styled from 'styled-components';
 
-export default styled.button`
+const Button = (props) => <button className={props.className}>{props.children}</button>;
+
+export default styled(Button)`
   position: absolute;
   right: 0;
   height: 100%;
   border-radius: 0 4px 4px 0;
   padding: 0 1rem;
   width: 15%;
-  font-family: 'Open Sans';
   border: 1px solid ${props => props.theme.main};
   border-left: none;
-  background-color: ${props => props.theme.red};
-  color: white;
-  font-size: 1rem;
+  background-color: ${props => props.valid ? props.theme.secondary : props.theme.red};
   outline: none;
-  cursor: pointer;
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: inherit;
-  }
-
-  &:active {
-    background-color: ${props => props.theme.redActive};
-  }
+  display: flex;
+  justify-content: center;
+  align-content: center;
 `;

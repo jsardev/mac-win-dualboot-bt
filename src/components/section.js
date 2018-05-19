@@ -5,11 +5,11 @@ const Section = styled.div`
 `;
 
 export const AttentionSection = styled(Section)`
-  background-color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.yellow};
 `;
 
 export const InfoSection = styled(Section)`
-  background-color: ${props => props.theme.yellow};
+  background-color: ${props => props.theme.secondary};
 `;
 
 export default Section;

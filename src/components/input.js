@@ -5,6 +5,9 @@ import InputMask from 'react-text-mask';
 import FormGroup from './formGroup';
 import InputButton from './inputButton';
 
+import checkmark from '../assets/checkmark.svg';
+import xmark from '../assets/xmark.svg';
+
 const StyledInputMask = styled(InputMask)`
   display: flex;
   flex-grow: 1;
@@ -17,6 +20,10 @@ const StyledInputMask = styled(InputMask)`
   outline: none;
   font-size: ${props => (props.readOnly ? '1.5rem' : '1rem')};
 `;
+
+const StyledObject = styled.object`
+  height: 18px;
+`
 
 const MASK_ENTRY_AMOUNT = 4;
 const MASK_AMOUNT_PER_ENTRY = 8;
@@ -65,7 +72,12 @@ export default class Input extends Component {
           readOnly={this.props.readOnly}
         />
         {!this.props.readOnly && (
-          <InputButton disabled={!this.state.valid}>Copy</InputButton>
+          <InputButton disabled={!this.state.valid} valid={this.state.valid}>
+            <StyledObject
+              type="image/svg+xml"
+              data={this.state.valid ? checkmark : xmark}
+            />
+          </InputButton>
         )}
       </FormGroup>
     );
