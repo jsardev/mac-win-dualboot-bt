@@ -15,7 +15,7 @@ const StyledInputMask = styled(InputMask)`
   border-radius: 4px;
   border: 1px solid ${props => props.theme.main};
   outline: none;
-  font-size: ${props => props.readOnly ? '1.5rem' : '1rem'};
+  font-size: ${props => (props.readOnly ? '1.5rem' : '1rem')};
 `;
 
 const MASK_ENTRY_AMOUNT = 4;
@@ -46,9 +46,11 @@ export default class Input extends Component {
     const rule = /[a-z|0-9]{8}/g;
     const match = value.match(rule);
     const valid = match !== null ? match.length === 4 : false;
-    this.setState({
-      valid
-    });
+
+    this.setState({ valid });
+
+    if (valid) this.props.onChange(value);
+    else this.props.onChange('');
   };
 
   render() {
@@ -59,6 +61,7 @@ export default class Input extends Component {
           onChange={this.onChange}
           guide
           showMask
+          value={this.props.value}
           readOnly={this.props.readOnly}
         />
         {!this.props.readOnly && (

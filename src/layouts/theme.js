@@ -5,7 +5,8 @@ const theme = {
   secondary: '#4ecdc4',
   red: '#ff6b6b',
   redActive: '#E86262',
-  bg: '#F7FFF7',
+  yellow: '#ffe66d',
+  bg: '#F7FFF7'
 };
 
 injectGlobal`
