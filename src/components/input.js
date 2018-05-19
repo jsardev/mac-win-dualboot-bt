@@ -35,7 +35,7 @@ const createMask = () => {
 
   for (let x = 0; x < MASK_ENTRY_AMOUNT; x++) {
     for (let y = 0; y < MASK_AMOUNT_PER_ENTRY; y++) mask.push(rule);
-    if (x < MASK_ENTRY_AMOUNT - 1) mask.push('-');
+    if (x < MASK_ENTRY_AMOUNT - 1) mask.push(' ');
   }
 
   return mask;

@@ -9,6 +9,8 @@ import List from '../components/list';
 import ListItem from '../components/listItem';
 import Input from '../components/input';
 
+import convert from '../utils/convert';
+
 const DEFAULT_IDENTIFIER_CONTENT = 'Enter your device identifier above';
 
 class Index extends Component {
@@ -27,9 +29,12 @@ class Index extends Component {
   };
 
   onLinkKeyChange = value => {
-    const convertedLinkKey = value;
+    let convertedLinkKey = '';
+    if (value.length > 0) {
+      convertedLinkKey = convert(value);
+    }
     this.setState({
-      convertedLinkKey: convertedLinkKey || ''
+      convertedLinkKey
     });
   };
 
