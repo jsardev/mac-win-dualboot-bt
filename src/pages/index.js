@@ -91,10 +91,8 @@ class Index extends Component {
               </ListItem>
               <ListItem>Enter your device identifier below:</ListItem>
             </List>
-            <Paragraph>
-              Your unique device identifier:
-              <Input onChange={this.onDeviceIdentifierChange} />
-            </Paragraph>
+            Your unique device identifier:
+            <Input onChange={this.onDeviceIdentifierChange} />
             <Heading sub>Boot into Mac</Heading>
             <List>
               <ListItem>
@@ -112,10 +110,8 @@ class Index extends Component {
                 Enter your <code>LinkKey</code> here:
               </ListItem>
             </List>
-            <Paragraph>
-              Your device bluetooth LinkKey on Mac:
-              <Input onChange={this.onLinkKeyChange} />
-            </Paragraph>
+            Your device bluetooth LinkKey on Mac:
+            <Input onChange={this.onLinkKeyChange} />
             <Heading sub>Boot into Windows again</Heading>
             <List>
               <ListItem>Open the registry editor.</ListItem>
@@ -138,10 +134,8 @@ class Index extends Component {
                 </Highlighted>
               </ListItem>
             </List>
-            <Paragraph>
-              Your converted <code>LinkKey</code> for Windows:
-              <Input value={this.state.convertedLinkKey} readOnly />
-            </Paragraph>
+            Your converted <code>LinkKey</code> for Windows:
+            <Input value={this.state.convertedLinkKey} readOnly />
           </Container>
         </Section>
         <InfoSection>

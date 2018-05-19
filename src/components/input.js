@@ -19,12 +19,12 @@ const StyledInputMask = styled(InputMask)`
   border: 1px solid ${props => props.theme.main};
   outline: none;
   font-size: ${props => (props.readOnly ? '1.5rem' : '1rem')};
-  cursor: ${props => props.readOnly ? 'default' : 'inherit'};
+  cursor: ${props => (props.readOnly ? 'default' : 'inherit')};
 `;
 
 const StyledObject = styled.object`
   height: 18px;
-`
+`;
 
 const MASK_ENTRY_AMOUNT = 4;
 const MASK_AMOUNT_PER_ENTRY = 8;
