@@ -5,6 +5,7 @@ export default styled.div`
   position: relative;
   opacity: 0.5;
 
+  &:hover,
   &:focus-within {
     opacity: 1;
   }

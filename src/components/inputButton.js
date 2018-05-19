@@ -4,7 +4,7 @@ export default styled.button`
   position: absolute;
   right: 0;
   height: 100%;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 4px 4px 0;
   padding: 0 1rem;
   width: 15%;
   font-family: 'Open Sans';

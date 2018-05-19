@@ -80,32 +80,34 @@ const IndexPage = () => (
         <List>
           <ListItem>Open the registry editor.</ListItem>
           <ListItem>
-            Go to{' '}
-            <code>
+            Go to the following path:{' '}
+            <pre>
               HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\BTHPORT\Parameters\Keys\ID_OF_YOUR_NETWORK_ADAPTER
-            </code>{' '}
-            catalog.
+            </pre>
           </ListItem>
           <ListItem>
             Right click on the <code>UNIQUE_IDENTIFIER_HERE</code> entry and
             select <code>Modify binary data</code>.
           </ListItem>
           <ListItem>
-            Erase all the data and enter your converted key{' '}
+            Erase all the data, enter your converted key available below and
+            submit the change.{' '}
             <Highlighted>
-              (symbol by symbol, unfortunately you can't copy-paste it):
-            </Highlighted>{' '}
-            <code>CONVERTED KEY HERE</code>.
+              You have to do it symbol by symbol, unfortunately you can't
+              copy-paste it.
+            </Highlighted>
           </ListItem>
-          <ListItem>Submit the change.</ListItem>
         </List>
+        <Paragraph>
+          Your converted <code>LinkKey</code> for Windows:
+          <Input readOnly />
+        </Paragraph>
       </Container>
     </Section>
     <AttentionSection>
       <Container>
-        That's all! As soon as you submit the registry change and close the
-        editor it should all work now. No more pairing everytime you boot into
-        another OS!
+        That's all! As soon as you submit the registry change it should all work
+        now. No more pairing everytime you boot into another OS!
       </Container>
     </AttentionSection>
     <Section>

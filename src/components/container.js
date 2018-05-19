@@ -15,4 +15,23 @@ export default styled.div`
       color: ${props => props.theme.secondary};
     }
   }
+
+  pre {
+    white-space: pre-wrap;
+    background-color: white;
+    padding: .5rem;
+    border: 1px solid ${props => props.theme.main};
+    border-radius: 4px;
+    color: ${props => props.theme.main};
+    line-height: 1.5rem;
+  }
+
+  code {
+    white-space: nowrap;
+    background-color: white;
+    padding: 2px 6px;
+    border: 1px solid ${props => props.theme.main};
+    border-radius: 4px;
+    color: ${props => props.theme.main};
+  }
 `;

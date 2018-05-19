@@ -12,10 +12,10 @@ const StyledInputMask = styled(InputMask)`
   padding: 0.5rem 18% 0.5rem 1rem;
   width: 100%;
   color: ${props => props.theme.main};
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid ${props => props.theme.main};
   outline: none;
-  font-size: 1.5rem;
+  font-size: ${props => props.readOnly ? '1.5rem' : '1rem'};
 `;
 
 const MASK_ENTRY_AMOUNT = 4;
@@ -59,8 +59,11 @@ export default class Input extends Component {
           onChange={this.onChange}
           guide
           showMask
+          readOnly={this.props.readOnly}
         />
-        <InputButton disabled={!this.state.valid}>Copy</InputButton>
+        {!this.props.readOnly && (
+          <InputButton disabled={!this.state.valid}>Copy</InputButton>
+        )}
       </FormGroup>
     );
   }
