@@ -1,26 +1,5 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# mac-win-dualboot-bt
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+An easy tool to help with simultaneous pairing on both OS while having dualboot on a machine.
 
-## Install
-
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
-
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
-
-Then you can run it by:
-```sh
-cd gatsby-example-site
-npm run develop
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Implementation based on [this article](https://www.insanelymac.com/forum/topic/268837-dual-boot-bluetooth-pairing-solved).
