@@ -5,6 +5,7 @@ export default styled.div`
   word-wrap: break-word;
   color: ${props => props.theme.main};
   max-width: 600px;
+  padding: 0 1rem;
   margin: 0 auto;
 
   a {
