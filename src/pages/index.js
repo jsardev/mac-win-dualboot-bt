@@ -46,14 +46,53 @@ const IndexPage = () => (
           </ListItem>
           <ListItem>
             Right click on the device you want to work for both systems and
-            select the <code>Properties</code> option.
+            select the <code>Properties</code> option. Look for your device
+            unique identifier.
           </ListItem>
-          <ListItem>Enter your unique device identifier below:</ListItem>
+          <ListItem>Enter your device identifier below:</ListItem>
         </List>
         <Paragraph>
           Your unique device identifier:
           <Input />
         </Paragraph>
+        <Heading sub>Boot into Mac</Heading>
+        <List>
+          <ListItem>
+            Pair the bluetooth devices you've paired with Windows earlier.
+          </ListItem>
+          <ListItem>
+            Get the device <code>LinkKey</code> from Mac. To get it, use this
+            command: <code>Command Here</code>. Be sure to take the right one
+            (the one with id <code>UNIQUE IDENTIFIER HERE</code>).
+          </ListItem>
+          <ListItem>
+            Enter your <code>LinkKey</code> here:
+          </ListItem>
+        </List>
+        <Paragraph>
+          Your device bluetooth LinkKey on Mac:
+          <Input />
+        </Paragraph>
+        <Heading sub>Boot into Windows again</Heading>
+        <List>
+          <ListItem>Open the registry editor.</ListItem>
+          <ListItem>
+            Go to{' '}
+            <code>
+              HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\BTHPORT\Parameters\Keys\ID_OF_YOUR_NETWORK_ADAPTER
+            </code>{' '}
+            catalog.
+          </ListItem>
+          <ListItem>
+            Right click on the <code>UNIQUE_IDENTIFIER_HERE</code> entry and
+            select <code>Modify binary data</code>.
+          </ListItem>
+          <ListItem>
+            Erase all the data and enter your converted key (symbol by symbol,
+            unfortunately you can't copy-paste it):{' '}
+            <code>CONVERTED KEY HERE</code>.
+          </ListItem>
+        </List>
       </Container>
     </Section>
   </div>

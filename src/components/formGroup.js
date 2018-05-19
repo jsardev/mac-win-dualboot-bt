@@ -4,8 +4,8 @@ export default styled.div`
   display: flex;
   position: relative;
   opacity: 0.5;
-  &:hover,
-  &:focus {
+
+  &:focus-within {
     opacity: 1;
   }
 `;
