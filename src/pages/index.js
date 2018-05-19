@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Link from 'gatsby-link';
 
 import Container from '../components/container';
 import Section, { InfoSection, AttentionSection } from '../components/section';
@@ -85,16 +86,24 @@ class Index extends Component {
                 created.
               </ListItem>
               <ListItem>
-                Open your bluetooth devices settings from the system tray.
+                Press <code>Windows + X</code> on your keyboard and choose{' '}
+                <code>Device Manager</code>.
               </ListItem>
               <ListItem>
-                Right click on the device you want to work for both systems and
-                select the <code>Properties</code> option.{' '}
-                <Highlighted>
-                  Look for your device unique identifier.
-                </Highlighted>
+                Expand the <code>Bluetooth</code> node, right-click on the
+                device you've just paired and choose <code>Properties</code>.
               </ListItem>
-              <ListItem>Enter your device identifier below:</ListItem>
+              <ListItem>
+                Switch to the <code>Details</code> tab and select{' '}
+                <code>Bluetooth Device Address</code>.
+              </ListItem>
+              <ListItem>
+                Enter your device identifier{' '}
+                <Highlighted>
+                  (the thing below the <code>Value</code> label)
+                </Highlighted>{' '}
+                below:
+              </ListItem>
             </List>
             Your unique device identifier:
             <Input
@@ -115,8 +124,8 @@ class Index extends Component {
                   /private/var/root/Library/Preferences/com.apple.Bluetoothd.plist
                 </pre>
                 <Highlighted>
-                  Be sure to take the right one <br />
-                  (the one with id <code> {this.state.deviceIdentifier}</code>).
+                  Be sure to take the right one (the one with id{' '}
+                  <code>{this.state.deviceIdentifier}</code>).
                 </Highlighted>
               </ListItem>
               <ListItem>
@@ -130,8 +139,36 @@ class Index extends Component {
               onChange={this.onLinkKeyChange}
             />
             <Heading sub>Boot into Windows again</Heading>
+            To make everything work, we need to edit bluetooth registry keys.
+            Unfortunately to do that we need to enter <code>regedit</code> as a{' '}
+            <code>System</code> account, which isn't so easy. Carefully follow
+            the instructions below.
             <List>
-              <ListItem>Open the registry editor.</ListItem>
+              <ListItem>
+                Download{' '}
+                <strong>
+                  <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/pstools">
+                    Microsoft's PsTools
+                  </a>
+                </strong>.
+              </ListItem>
+              <ListItem>
+                Extract <code>PsTools</code> and move the <code>PsExec</code>{' '}
+                file right under <code>C:/</code> drive.
+              </ListItem>
+              <ListItem>
+                Press <code>Windows + X</code> on your keyboard and open the
+                command prompt as administrator.
+              </ListItem>
+              <ListItem>
+                Move to the directory where <code>PsExec</code> is available. If
+                you followed the previous steps, it would be using this command:{' '}
+                <code>cd C:\</code>.
+              </ListItem>
+              <ListItem>
+                Open <code>regedit</code> with <code>PsExec</code> with the
+                following command: <code>psexec -s -i regedit</code>.
+              </ListItem>
               <ListItem>
                 Go to the following path:{' '}
                 <pre>
@@ -165,6 +202,13 @@ class Index extends Component {
             <Heading sub>Congrats!</Heading>
             You've made it! As soon as you submit the registry change it should
             all work now. No more pairing everytime you boot into another OS!
+            <Heading sub red>
+              Having problems?
+            </Heading>
+            If it didn't work for you, check out our{' '}
+            <strong>
+              <Link to="/faq/">FAQ page</Link>
+            </strong>! There are few solutions to known problems.
           </Container>
         </InfoSection>
         <Section>
