@@ -106,10 +106,10 @@ class Index extends Component {
               <ListItem>
                 Get the device <code>LinkKey</code> from Mac. To get it, use
                 this command:{' '}
-                <code>
+                <pre>
                   sudo defaults read
                   /private/var/root/Library/Preferences/com.apple.Bluetoothd.plist
-                </code>.{' '}
+                </pre>.{' '}
                 <Highlighted>
                   Be sure to take the right one (the one with id{' '}
                   <code> {this.state.deviceIdentifier}</code>).
