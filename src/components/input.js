@@ -26,16 +26,15 @@ const StyledObject = styled.object`
   height: 18px;
 `;
 
-const MASK_ENTRY_AMOUNT = 4;
-const MASK_AMOUNT_PER_ENTRY = 8;
+const maskEntryRule = '[a-z|0-9]';
 
-const createMask = () => {
-  const rule = /[a-z|0-9]/;
+const createMask = (entryAmount, amountPerEntry) => {
+  const rule = new RegExp(maskEntryRule);
   const mask = [];
 
-  for (let x = 0; x < MASK_ENTRY_AMOUNT; x++) {
-    for (let y = 0; y < MASK_AMOUNT_PER_ENTRY; y++) mask.push(rule);
-    if (x < MASK_ENTRY_AMOUNT - 1) mask.push(' ');
+  for (let x = 0; x < entryAmount; x++) {
+    for (let y = 0; y < amountPerEntry; y++) mask.push(rule);
+    if (x < entryAmount - 1) mask.push(' ');
   }
 
   return mask;
@@ -45,15 +44,20 @@ export default class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mask: createMask(),
+      mask: createMask(props.entryAmount, props.amountPerEntry),
       valid: false
     };
   }
 
   onChange = ({ target: { value } }) => {
-    const rule = /[a-z|0-9]{8}/g;
+    const rule = new RegExp(
+      `${maskEntryRule}{${this.props.amountPerEntry}}`,
+      'g'
+    );
+
     const match = value.match(rule);
-    const valid = match !== null ? match.length === 4 : false;
+    const valid =
+      match !== null ? match.length === this.props.entryAmount : false;
 
     this.setState({ valid });
 

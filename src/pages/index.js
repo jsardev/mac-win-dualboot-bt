@@ -97,7 +97,11 @@ class Index extends Component {
               <ListItem>Enter your device identifier below:</ListItem>
             </List>
             Your unique device identifier:
-            <Input onChange={this.onDeviceIdentifierChange} />
+            <Input
+              entryAmount={6}
+              amountPerEntry={2}
+              onChange={this.onDeviceIdentifierChange}
+            />
             <Heading sub>Boot into Mac</Heading>
             <List>
               <ListItem>
@@ -109,10 +113,10 @@ class Index extends Component {
                 <pre>
                   sudo defaults read
                   /private/var/root/Library/Preferences/com.apple.Bluetoothd.plist
-                </pre>.{' '}
+                </pre>
                 <Highlighted>
-                  Be sure to take the right one (the one with id{' '}
-                  <code> {this.state.deviceIdentifier}</code>).
+                  Be sure to take the right one <br />
+                  (the one with id <code> {this.state.deviceIdentifier}</code>).
                 </Highlighted>
               </ListItem>
               <ListItem>
@@ -120,14 +124,18 @@ class Index extends Component {
               </ListItem>
             </List>
             Your device bluetooth <code>LinkKey</code> on Mac:
-            <Input onChange={this.onLinkKeyChange} />
+            <Input
+              entryAmount={4}
+              amountPerEntry={8}
+              onChange={this.onLinkKeyChange}
+            />
             <Heading sub>Boot into Windows again</Heading>
             <List>
               <ListItem>Open the registry editor.</ListItem>
               <ListItem>
                 Go to the following path:{' '}
                 <pre>
-                  HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\BTHPORT\Parameters\Keys\ID_OF_YOUR_NETWORK_ADAPTER
+                  HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\BTHPORT\Parameters\Keys\ID_OF_YOUR_BLUETOOTH_NETWORK_ADAPTER
                 </pre>
               </ListItem>
               <ListItem>
@@ -144,7 +152,12 @@ class Index extends Component {
               </ListItem>
             </List>
             Your converted <code>LinkKey</code> for Windows:
-            <Input value={this.state.convertedLinkKey} readOnly />
+            <Input
+              entryAmount={4}
+              amountPerEntry={8}
+              value={this.state.convertedLinkKey}
+              readOnly
+            />
           </Container>
         </Section>
         <InfoSection>
