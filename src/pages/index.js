@@ -50,7 +50,18 @@ class Index extends Component {
         </Section>
         <InfoSection>
           <Container>
-            Follow the steps below and fix the problem with ease!
+            <Paragraph>
+              Follow the steps below and fix the problem with ease!
+            </Paragraph>
+            <Paragraph>
+              Also note, that I'm not the author of this fix, this is just an
+              easy tool for it. The solution is based on{' '}
+              <strong>
+                <a href="https://www.insanelymac.com/forum/topic/268837-dual-boot-bluetooth-pairing-solved/">
+                  this answer
+                </a>
+              </strong>.
+            </Paragraph>
           </Container>
         </InfoSection>
         <AttentionSection>

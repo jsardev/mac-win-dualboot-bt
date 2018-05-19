@@ -13,7 +13,7 @@ export default styled.div`
     text-decoration: none;
 
     &:hover {
-      color: ${props => props.theme.secondary};
+      color: ${props => props.theme.red};
     }
   }
 
