@@ -97,7 +97,22 @@ const IndexPage = () => (
             </Highlighted>{' '}
             <code>CONVERTED KEY HERE</code>.
           </ListItem>
+          <ListItem>Submit the change.</ListItem>
         </List>
+      </Container>
+    </Section>
+    <AttentionSection>
+      <Container>
+        That's all! As soon as you submit the registry change and close the
+        editor it should all work now. No more pairing everytime you boot into
+        another OS!
+      </Container>
+    </AttentionSection>
+    <Section>
+      <Container>
+        Created by Jacob Sarnowski. Hosted on{' '}
+        <a href="https://www.netlify.com/">Netlify</a>. Powered by{' '}
+        <a href="https://www.gatsbyjs.org/">Gatsby</a>.
       </Container>
     </Section>
   </div>
