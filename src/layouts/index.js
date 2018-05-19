@@ -1,15 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { injectGlobal } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
-injectGlobal`
-  body {
-    margin: 0;
-  }
-`;
-
-import Container from '../components/container';
+import theme from './theme';
 
 const Layout = ({ children, data }) => (
   <div>
@@ -24,7 +18,7 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'mac, windows, bluetooth, dualboot' },
       ]}
     />
-    <Container>{children()}</Container>
+    <ThemeProvider theme={theme}>{children()}</ThemeProvider>
   </div>
 );
 
