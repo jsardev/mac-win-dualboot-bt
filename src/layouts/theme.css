@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/OpenSans-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  background-color: #f7fff7;
+}

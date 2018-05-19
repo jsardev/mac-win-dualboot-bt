@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 
+import './theme.css';
 import theme from './theme';
 
 const Layout = ({ children, data }) => (
@@ -13,9 +14,9 @@ const Layout = ({ children, data }) => (
         {
           name: 'description',
           content:
-            'Simple tool to help with pairing bluetooth devices on a Mac and Windows dualboot setup.',
+            'Simple tool to help with pairing bluetooth devices on a Mac and Windows dualboot setup.'
         },
-        { name: 'keywords', content: 'mac, windows, bluetooth, dualboot' },
+        { name: 'keywords', content: 'mac, windows, bluetooth, dualboot' }
       ]}
     />
     <ThemeProvider theme={theme}>{children()}</ThemeProvider>
@@ -23,7 +24,7 @@ const Layout = ({ children, data }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 };
 
 export const query = graphql`
