@@ -16,5 +16,5 @@ export default styled(Button)`
   outline: none;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 `;
